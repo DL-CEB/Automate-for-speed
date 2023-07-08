@@ -1,0 +1,13 @@
+{
+    "builds": [{
+        "src": "autoemailer/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "1500mb", "runtime": "python3.9" }
+    }],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "autoemailer/wsgi.py"
+        }
+    ]
+}
